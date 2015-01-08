@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get    '/change_password' => 'passwords#new', as: :change_password
   post   '/change_password' => 'passwords#update'
 
-  root   'home#show'
+  root   'course_enrollments#index'
 end

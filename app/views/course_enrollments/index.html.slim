@@ -1,0 +1,5 @@
+.row
+  - for enrollment in @enrollments
+    h3= enrollment.course.name
+    - if enrollment.instructor?
+      p= link_to pluralize(enrollment.course.active_student_enrollment_count, 'student'), '#'

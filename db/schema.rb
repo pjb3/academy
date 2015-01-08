@@ -19,23 +19,15 @@ ActiveRecord::Schema.define(version: 20150108033356) do
   create_table "course_enrollments", force: :cascade do |t|
     t.integer  "course_id"
     t.integer  "user_id"
+    t.string   "role"
     t.integer  "lessons_completed"
+    t.datetime "dropped_at"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
 
   add_index "course_enrollments", ["course_id"], name: "index_course_enrollments_on_course_id", using: :btree
   add_index "course_enrollments", ["user_id"], name: "index_course_enrollments_on_user_id", using: :btree
-
-  create_table "course_instructors", force: :cascade do |t|
-    t.integer  "course_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "course_instructors", ["course_id"], name: "index_course_instructors_on_course_id", using: :btree
-  add_index "course_instructors", ["user_id"], name: "index_course_instructors_on_user_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
@@ -60,6 +52,4 @@ ActiveRecord::Schema.define(version: 20150108033356) do
 
   add_foreign_key "course_enrollments", "courses"
   add_foreign_key "course_enrollments", "users"
-  add_foreign_key "course_instructors", "courses"
-  add_foreign_key "course_instructors", "users"
 end

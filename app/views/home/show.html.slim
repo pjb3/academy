@@ -1,4 +1,0 @@
-.row
-  - for instructor in current_user.instructors
-    h3= instructor.course.name
-    p= link_to pluralize(instructor.course.enrollments.size, 'student'), '#'
