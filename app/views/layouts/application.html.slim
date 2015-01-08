@@ -7,8 +7,26 @@ html lang="en"
     title Betamore Academy
 
     = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application'
     = csrf_meta_tags
   body
-    .row
-      .container= yield
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          .navbar-brand Betamore Academy
+        ul.nav.navbar-nav.navbar-right
+          li.dropdown
+            a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-expanded="false"
+              span.glyphicon.glyphicon-user
+              | &nbsp;
+              = current_user.name
+              | &nbsp;
+              span.caret
+            ul.dropdown-menu role="menu"
+              li
+                a href="#"
+                  span.glyphicon.glyphicon-log-out
+                  | &nbsp; Log Out
+
+    .container
+      = yield
