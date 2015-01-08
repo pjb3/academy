@@ -1,0 +1,19 @@
+.panel.panel-default
+  .panel-heading
+    h3.panel-title Log In
+
+  .panel-body
+
+    = render 'shared/flash'
+
+    = form_tag
+
+      .form-group
+        label for="email" Email Address
+        = email_field_tag :email, params[:email], class: 'form-control', id: 'email'
+
+      .form-group
+        label for="password" Password
+        = password_field_tag :password, nil, class: "form-control", id: "password"
+
+      = submit_tag 'Log In', class: 'btn btn-success'

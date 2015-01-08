@@ -1,0 +1,3 @@
+- [[:notice, :success],[:alert, :warning],[:error, :danger]].each do |type, class_name|
+  - if flash[type].present?
+    div class="alert alert-#{class_name}" role="alert"= flash[type]

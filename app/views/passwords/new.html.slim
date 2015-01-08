@@ -1,0 +1,20 @@
+.panel.panel-default
+  .panel-heading
+    h3.panel-title Update Password
+
+  .panel-body
+
+    = render 'shared/flash'
+
+    = form_tag
+
+      .form-group
+        label for="password" Password
+        = password_field_tag :password, nil, class: "form-control", id: "password"
+
+      .form-group
+        label for="password_confirmation" Password Confirmation
+        = password_field_tag :password_confirmation, nil, class: "form-control", id: "password_confirmation"
+
+
+      button.btn.btn-success type="submit" Update Password
