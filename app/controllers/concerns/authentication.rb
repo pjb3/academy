@@ -32,7 +32,6 @@ module Authentication
   def log_in!(user)
     user.update(last_logged_in_at: Time.current)
     cookies.signed.permanent[:user_id] = {
-      domain: :all,
       value: user.id
     }
     user
