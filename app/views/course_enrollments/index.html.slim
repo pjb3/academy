@@ -1,5 +1,16 @@
+ol.breadcrumb
+  li.active Courses
+
 .row
   - for enrollment in @enrollments
-    h3= enrollment.course.name
-    - if enrollment.instructor?
-      p= link_to pluralize(enrollment.course.active_student_enrollment_count, 'student'), '#'
+    .col-xs-12.col-sm-6.col-md-4
+      .list-group
+        .list-group-item.active
+          h4.list-group-item-heading= enrollment.course.name
+        = link_to course_path(enrollment.course), class: 'list-group-item'
+          span.badge= enrollment.course.lessons_count
+          | Lessons
+        - if enrollment.instructor?
+          = link_to '#', class: 'list-group-item'
+            span.badge= enrollment.course.active_student_enrollment_count
+            | Student

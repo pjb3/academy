@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  validates_presence_of :email
+  validates_uniqueness_of :email
+
   def change_password(password, password_confirmation)
     update(password: password, password_confirmation: password_confirmation, temporary_password: false)
   end
