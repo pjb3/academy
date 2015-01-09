@@ -10,3 +10,9 @@ ol.breadcrumb
   .panel-body
     - if @unit.video_url.present?
       = embed_video @unit.video_url
+  .panel-body.pull-right
+    = link_to @unit.next ? 'Next Unit' : 'Complete Lesson', complete_unit_path(@unit), id: 'next_button', class: "btn btn-lg btn-success", disabled: !@unit_enrollment.can_be_completed?
+
+- unless @unit_enrollment.completed?
+  javascript:
+    setTimeout(function(){ $('#next_button').removeAttr('disabled') }, #{@unit_enrollment.can_be_completed_in * 1000})

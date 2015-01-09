@@ -34,12 +34,26 @@ class CourseEnrollment < ActiveRecord::Base
     end
   end
 
+  def started?
+    started_at.present?
+  end
+
+  def completed?
+    completed_at.present?
+  end
+
   def has_started?(lesson)
     lesson_status(lesson).present?
   end
 
   def has_completed?(lesson)
-    lesson_status(lesson) == :completed
+    lesson_status(lesson) == :complete
+  end
+
+  def start!
+    unless started?
+      update!(started_at: Time.current)
+    end
   end
 
   def start_lesson!(lesson)
@@ -47,4 +61,19 @@ class CourseEnrollment < ActiveRecord::Base
       lesson_enrollment.start!
     end
   end
+
+  def complete!
+    unless completed?
+      update!(completed_at: Time.current)
+    end
+  end
+
+  def done?
+    !lesson_enrollments.incomplete.exists?
+  end
+
+  def complete_if_done!
+    complete! if done?
+  end
+
 end

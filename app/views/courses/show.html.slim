@@ -7,5 +7,8 @@ ol.breadcrumb
     h4.list-group-item-heading Lessons
   - last_lesson_complete = true
   - for lesson in @lessons
-    = link_to "#{lesson.number}. #{lesson.name}", lesson_path(lesson), class: "list-group-item #{class_for(status: @course_enrollment.lesson_status(lesson), disabled: !last_lesson_complete)}"
+    = link_to last_lesson_complete ? lesson_path(lesson) : '#', class: "list-group-item #{class_for(status: @course_enrollment.lesson_status(lesson), disabled: !last_lesson_complete)}"
+      = "#{lesson.number}. #{lesson.name}"
+      em.pull-right
+        = "#{pluralize(lesson.units_count, 'units')}, #{Formatting.hms(lesson.total_video_length, show_hour_if_zero: false)}"
     - last_lesson_complete = @course_enrollment.has_completed?(lesson)

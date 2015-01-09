@@ -5,6 +5,8 @@ class UnitEnrollment < ActiveRecord::Base
   validates_presence_of :lesson_enrollment_id, :unit_id
   validates_presence_of :lesson_enrollment_id, scope: :unit_id
 
+  scope :incomplete, -> { where(completed_at: nil) }
+
   def started?
     started_at.present?
   end
@@ -22,6 +24,26 @@ class UnitEnrollment < ActiveRecord::Base
   def complete!
     unless completed?
       update!(completed_at: Time.current)
+      lesson_enrollment.complete_if_done!
     end
   end
+
+  def can_be_completed_at
+    if started?
+      started_at + unit.video_length.to_i.seconds
+    end
+  end
+
+  def can_be_completed_in
+    if can_be_completed?
+      0
+    else
+      can_be_completed_at - Time.current
+    end
+  end
+
+  def can_be_completed?
+    started? && can_be_completed_at < Time.current
+  end
+
 end

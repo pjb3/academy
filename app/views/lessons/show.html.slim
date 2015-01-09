@@ -8,5 +8,7 @@ ol.breadcrumb
     h4.list-group-item-heading Units
   - last_unit_complete = true
   - for unit in @units
-    = link_to "#{unit.number}. #{unit.name}", unit_path(unit), class: "list-group-item #{class_for(status: @lesson_enrollment.unit_status(unit), disabled: !last_unit_complete)}"
+    = link_to last_unit_complete ? unit_path(unit) : '#', class: "list-group-item #{class_for(status: @lesson_enrollment.unit_status(unit), disabled: !last_unit_complete)}"
+      = "#{unit.number}. #{unit.name}"
+      em.pull-right= Formatting.hms(unit.video_length, show_hour_if_zero: false)
     - last_unit_complete = @lesson_enrollment.has_completed?(unit)

@@ -5,6 +5,8 @@ class CreateCourseEnrollments < ActiveRecord::Migration
       t.belongs_to :user, index: true, null: false
       t.string :role, null: false
       t.integer :lessons_completed
+      t.timestamp :started_at
+      t.timestamp :completed_at
       t.timestamp :dropped_at
 
       t.timestamps null: false

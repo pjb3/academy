@@ -7,6 +7,8 @@ class LessonEnrollment < ActiveRecord::Base
   validates_presence_of :course_enrollment_id, :lesson_id
   validates_uniqueness_of :course_enrollment_id, scope: :lesson_id
 
+  scope :incomplete, -> { where(completed_at: nil) }
+
   def started?
     started_at.present?
   end
@@ -30,7 +32,7 @@ class LessonEnrollment < ActiveRecord::Base
   end
 
   def has_completed?(unit)
-    unit_status(unit) == :completed
+    unit_status(unit) == :complete
   end
 
   def start!
@@ -48,6 +50,15 @@ class LessonEnrollment < ActiveRecord::Base
   def complete!
     unless completed?
       update!(completed_at: Time.current)
+      course_enrollment.complete_if_done!
     end
+  end
+
+  def done?
+    !unit_enrollments.incomplete.exists?
+  end
+
+  def complete_if_done!
+    complete! if done?
   end
 end

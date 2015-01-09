@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20150109022542) do
     t.integer  "user_id",           null: false
     t.string   "role",              null: false
     t.integer  "lessons_completed"
+    t.datetime "started_at"
+    t.datetime "completed_at"
     t.datetime "dropped_at"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
@@ -54,13 +56,14 @@ ActiveRecord::Schema.define(version: 20150109022542) do
   add_index "lesson_enrollments", ["lesson_id"], name: "index_lesson_enrollments_on_lesson_id", using: :btree
 
   create_table "lessons", force: :cascade do |t|
-    t.integer  "course_id",   null: false
-    t.string   "name",        null: false
-    t.integer  "number",      null: false
+    t.integer  "course_id",          null: false
+    t.string   "name",               null: false
+    t.integer  "number",             null: false
     t.text     "description"
     t.integer  "units_count"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "total_video_length"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "lessons", ["course_id", "number"], name: "index_lessons_on_course_id_and_number", unique: true, using: :btree
@@ -80,13 +83,14 @@ ActiveRecord::Schema.define(version: 20150109022542) do
   add_index "unit_enrollments", ["unit_id"], name: "index_unit_enrollments_on_unit_id", using: :btree
 
   create_table "units", force: :cascade do |t|
-    t.integer  "lesson_id",  null: false
-    t.string   "name",       null: false
-    t.integer  "number",     null: false
+    t.integer  "lesson_id",    null: false
+    t.string   "name",         null: false
+    t.integer  "number",       null: false
     t.string   "video_url"
+    t.integer  "video_length"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "units", ["lesson_id", "number"], name: "index_units_on_lesson_id_and_number", unique: true, using: :btree

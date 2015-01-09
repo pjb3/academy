@@ -5,6 +5,7 @@ class CreateUnits < ActiveRecord::Migration
       t.string :name, null: false
       t.integer :number, null: false
       t.string :video_url
+      t.integer :video_length
       t.text :content
 
       t.timestamps null: false

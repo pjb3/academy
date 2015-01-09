@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get    '/courses/:id' => 'courses#show', as: :course
   get    '/lessons/:id' => 'lessons#show', as: :lesson
   get    '/units/:id'   => 'units#show', as: :unit
+  get    '/units/:id/complete' => 'units#complete', as: :complete_unit
 
   root   'course_enrollments#index'
 end

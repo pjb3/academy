@@ -12,14 +12,14 @@ course.lessons.create!(name: 'Mac OS X', number: 1, description: %{This lesson w
 
   # <iframe width="420" height="315" src="//www.youtube.com/embed/8gkvAt1FYps" frameborder="0" allowfullscreen></iframe>
 
-  lesson.units.create!(name: 'Installing Applications', number: 1, video_url: 'https://www.youtube.com/watch?v=8gkvAt1FYps')
+  lesson.units.create!(name: 'Installing Applications', number: 1, video_url: 'https://www.youtube.com/watch?v=8gkvAt1FYps', video_length: 180)
     # iTerm 2 (copy to Applications)
     # Chrome (open .dmg, copy to Applications)
     # Libre Office (run installer)
     # Navicat (app store)
-  lesson.units.create!(name: 'Launching Applications', number: 2, video_url: 'https://www.youtube.com/watch?v=8C-nLj3hE48')
+  lesson.units.create!(name: 'Launching Applications', number: 2, video_url: 'https://www.youtube.com/watch?v=8C-nLj3hE48', video_length: 222)
     # Alfred
-  lesson.units.create!(name: 'Switching Applications', number: 3, video_url: 'https://www.youtube.com/watch?v=_-Q5oTxXTBA')
+  lesson.units.create!(name: 'Switching Applications', number: 3, video_url: 'https://www.youtube.com/watch?v=_-Q5oTxXTBA', video_length: 148)
 end
 
 course.lessons.create!(name: 'The Command Line', number: 2).tap do |lesson|
