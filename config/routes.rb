@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get    '/log_in' => 'log_in#new', as: :log_in
   post   '/log_in' => 'log_in#create'
+  post   '/log_out' => 'log_in#destroy', as: :log_out
 
   get    '/change_password' => 'passwords#new', as: :change_password
   post   '/change_password' => 'passwords#update'

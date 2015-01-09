@@ -38,4 +38,8 @@ module Authentication
     user
   end
 
+  def log_out!
+    cookies.delete(:user_id)
+  end
+
 end

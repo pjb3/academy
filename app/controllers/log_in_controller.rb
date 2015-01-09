@@ -14,4 +14,9 @@ class LogInController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+    log_out!
+    redirect_to log_in_path, notice: 'You have been logged out'
+  end
 end
