@@ -1,0 +1,12 @@
+ol.breadcrumb
+  li= link_to 'Courses', root_path
+  li= link_to @course.name, course_path(@course)
+  li= link_to @lesson.name, lesson_path(@lesson)
+  li.active= @unit.name
+
+.panel.panel-primary
+  .panel-heading
+    h3.panel-title= @unit.name
+  .panel-body
+    - if @unit.video_url.present?
+      = embed_video @unit.video_url

@@ -4,7 +4,7 @@ class CreateLessons < ActiveRecord::Migration
       t.belongs_to :course, index: true, null: false
       t.string :name, null: false
       t.integer :number, null: false
-      t.text :content
+      t.text :description
       t.integer :units_count
 
       t.timestamps null: false

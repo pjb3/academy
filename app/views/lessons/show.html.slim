@@ -1,0 +1,12 @@
+ol.breadcrumb
+  li= link_to 'Courses', root_path
+  li= link_to @course.name, course_path(@course)
+  li.active= @lesson.name
+
+.list-group
+  .list-group-item.active
+    h4.list-group-item-heading Units
+  - last_unit_complete = true
+  - for unit in @units
+    = link_to "#{unit.number}. #{unit.name}", unit_path(unit), class: "list-group-item #{class_for(status: @lesson_enrollment.unit_status(unit), disabled: !last_unit_complete)}"
+    - last_unit_complete = @lesson_enrollment.has_completed?(unit)

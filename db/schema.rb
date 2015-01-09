@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109014609) do
+ActiveRecord::Schema.define(version: 20150109022542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20150109014609) do
     t.integer  "course_id",   null: false
     t.string   "name",        null: false
     t.integer  "number",      null: false
-    t.text     "content"
+    t.text     "description"
     t.integer  "units_count"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -65,6 +65,19 @@ ActiveRecord::Schema.define(version: 20150109014609) do
 
   add_index "lessons", ["course_id", "number"], name: "index_lessons_on_course_id_and_number", unique: true, using: :btree
   add_index "lessons", ["course_id"], name: "index_lessons_on_course_id", using: :btree
+
+  create_table "unit_enrollments", force: :cascade do |t|
+    t.integer  "lesson_enrollment_id", null: false
+    t.integer  "unit_id",              null: false
+    t.datetime "started_at"
+    t.datetime "completed_at"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "unit_enrollments", ["lesson_enrollment_id", "unit_id"], name: "index_unit_enrollments_on_lesson_enrollment_id_and_unit_id", unique: true, using: :btree
+  add_index "unit_enrollments", ["lesson_enrollment_id"], name: "index_unit_enrollments_on_lesson_enrollment_id", using: :btree
+  add_index "unit_enrollments", ["unit_id"], name: "index_unit_enrollments_on_unit_id", using: :btree
 
   create_table "units", force: :cascade do |t|
     t.integer  "lesson_id",  null: false
@@ -97,4 +110,6 @@ ActiveRecord::Schema.define(version: 20150109014609) do
   add_foreign_key "lesson_enrollments", "course_enrollments"
   add_foreign_key "lesson_enrollments", "lessons"
   add_foreign_key "lessons", "courses"
+  add_foreign_key "unit_enrollments", "lesson_enrollments"
+  add_foreign_key "unit_enrollments", "units"
 end

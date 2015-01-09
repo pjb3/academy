@@ -41,4 +41,10 @@ class CourseEnrollment < ActiveRecord::Base
   def has_completed?(lesson)
     lesson_status(lesson) == :completed
   end
+
+  def start_lesson!(lesson)
+    lesson_enrollments.find_or_initialize_by(lesson: lesson).tap do |lesson_enrollment|
+      lesson_enrollment.start!
+    end
+  end
 end
