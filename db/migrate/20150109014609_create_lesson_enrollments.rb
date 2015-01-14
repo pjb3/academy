@@ -4,6 +4,7 @@ class CreateLessonEnrollments < ActiveRecord::Migration
       t.belongs_to :course_enrollment, index: true, null: false
       t.belongs_to :lesson, index: true, null: false
       t.integer :units_completed, default: 0
+      t.integer :answers_count
       t.timestamp :started_at
       t.timestamp :completed_at
 

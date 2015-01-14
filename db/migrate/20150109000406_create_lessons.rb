@@ -6,6 +6,7 @@ class CreateLessons < ActiveRecord::Migration
       t.integer :number, null: false
       t.text :description
       t.integer :units_count
+      t.integer :questions_count
       t.integer :total_video_length
 
       t.timestamps null: false

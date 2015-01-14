@@ -2,6 +2,7 @@ class Lesson < ActiveRecord::Base
   belongs_to :course, counter_cache: true
 
   has_many :units
+  has_many :questions
 
   validates_presence_of :course_id, :name, :number
   validates_uniqueness_of :number, scope: :course_id

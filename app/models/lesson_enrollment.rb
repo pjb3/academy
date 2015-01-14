@@ -3,6 +3,7 @@ class LessonEnrollment < ActiveRecord::Base
   belongs_to :lesson
 
   has_many :unit_enrollments
+  has_many :answers
 
   validates_presence_of :course_enrollment_id, :lesson_id
   validates_uniqueness_of :course_enrollment_id, scope: :lesson_id
@@ -35,6 +36,10 @@ class LessonEnrollment < ActiveRecord::Base
     unit_status(unit) == :complete
   end
 
+  def has_answered?(question)
+    answers.detect{|answer| answer.question == question }
+  end
+
   def start!
     unless started?
       update!(started_at: Time.current)
@@ -56,7 +61,9 @@ class LessonEnrollment < ActiveRecord::Base
 
   def done?
     unit_enrollments.reload
-    lesson.units.all? {|unit| has_completed?(unit) }
+    return false unless lesson.units.all? {|unit| has_completed?(unit) }
+    answers.reload
+    lesson.questions.all? {|question| has_answered?(question) }
   end
 
   def complete_if_done!

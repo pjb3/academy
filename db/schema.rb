@@ -11,10 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109022542) do
+ActiveRecord::Schema.define(version: 20150114024942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.integer  "lesson_enrollment_id", null: false
+    t.integer  "question_id",          null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "answers", ["lesson_enrollment_id", "question_id"], name: "index_answers_on_lesson_enrollment_id_and_question_id", unique: true, using: :btree
+  add_index "answers", ["lesson_enrollment_id"], name: "index_answers_on_lesson_enrollment_id", using: :btree
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
+
+  create_table "choices", force: :cascade do |t|
+    t.integer  "question_id", null: false
+    t.text     "content",     null: false
+    t.boolean  "correct"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "choices", ["question_id", "content"], name: "index_choices_on_question_id_and_content", unique: true, using: :btree
+  add_index "choices", ["question_id"], name: "index_choices_on_question_id", using: :btree
 
   create_table "course_enrollments", force: :cascade do |t|
     t.integer  "course_id",         null: false
@@ -45,6 +67,7 @@ ActiveRecord::Schema.define(version: 20150109022542) do
     t.integer  "course_enrollment_id",             null: false
     t.integer  "lesson_id",                        null: false
     t.integer  "units_completed",      default: 0
+    t.integer  "answers_count"
     t.datetime "started_at"
     t.datetime "completed_at"
     t.datetime "created_at",                       null: false
@@ -61,6 +84,7 @@ ActiveRecord::Schema.define(version: 20150109022542) do
     t.integer  "number",             null: false
     t.text     "description"
     t.integer  "units_count"
+    t.integer  "questions_count"
     t.integer  "total_video_length"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -68,6 +92,19 @@ ActiveRecord::Schema.define(version: 20150109022542) do
 
   add_index "lessons", ["course_id", "number"], name: "index_lessons_on_course_id_and_number", unique: true, using: :btree
   add_index "lessons", ["course_id"], name: "index_lessons_on_course_id", using: :btree
+
+  create_table "questions", force: :cascade do |t|
+    t.integer  "lesson_id",  null: false
+    t.integer  "unit_id",    null: false
+    t.integer  "number",     null: false
+    t.text     "content",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "questions", ["lesson_id", "number"], name: "index_questions_on_lesson_id_and_number", unique: true, using: :btree
+  add_index "questions", ["lesson_id"], name: "index_questions_on_lesson_id", using: :btree
+  add_index "questions", ["unit_id"], name: "index_questions_on_unit_id", using: :btree
 
   create_table "unit_enrollments", force: :cascade do |t|
     t.integer  "lesson_enrollment_id", null: false
@@ -109,11 +146,16 @@ ActiveRecord::Schema.define(version: 20150109022542) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "answers", "lesson_enrollments"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "choices", "questions"
   add_foreign_key "course_enrollments", "courses"
   add_foreign_key "course_enrollments", "users"
   add_foreign_key "lesson_enrollments", "course_enrollments"
   add_foreign_key "lesson_enrollments", "lessons"
   add_foreign_key "lessons", "courses"
+  add_foreign_key "questions", "lessons"
+  add_foreign_key "questions", "units"
   add_foreign_key "unit_enrollments", "lesson_enrollments"
   add_foreign_key "unit_enrollments", "units"
 end
