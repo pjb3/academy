@@ -69,7 +69,8 @@ class CourseEnrollment < ActiveRecord::Base
   end
 
   def done?
-    !lesson_enrollments.incomplete.exists?
+    lesson_enrollments.reload
+    lessons.all? {|lesson| has_completed?(lesson) }
   end
 
   def complete_if_done!
