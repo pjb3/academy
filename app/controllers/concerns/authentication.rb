@@ -26,7 +26,7 @@ module Authentication
   end
 
   def current_user
-    @current_user ||= User.find(current_user_id) if logged_in?
+    @current_user ||= User.find_by(id: current_user_id) if logged_in?
   end
 
   def log_in!(user)
