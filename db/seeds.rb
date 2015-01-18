@@ -6,7 +6,7 @@ student = User.create!(first_name: 'Joe', last_name: 'Student', email: 'student@
 course.enrollments.create!(user: paul, role: 'instructor')
 course.enrollments.create!(user: student, role: 'student')
 
-course.lessons.create!(name: 'Mac OS X', number: 1, description: %{This lesson will cover the basic of using the latest version of Mac OS X, 10.10 Yosemite}).tap do |lesson|
+course.lessons.create!(name: 'Mac OS X', number: 1, description: %{This lesson will cover the basics of using the latest version of Mac OS X, 10.10 Yosemite}).tap do |lesson|
 
   # TODO: Record Real Videos
 

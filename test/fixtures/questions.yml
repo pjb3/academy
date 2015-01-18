@@ -1,0 +1,17 @@
+question_1:
+  lesson: lesson_1
+  unit: unit_1
+  number: 1
+  content: Which of the following numbers is even?
+
+question_2:
+  lesson: lesson_1
+  unit: unit_2
+  number: 2
+  content: Which of the following is not a basic ruby type?
+
+question_3:
+  lesson: lesson_1
+  unit: unit_3
+  number: 3
+  content: Which of the following expressions does not evaluate to 42?

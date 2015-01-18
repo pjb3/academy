@@ -1,0 +1,13 @@
+instructor:
+  first_name: Test
+  last_name: Instructor
+  email: instructor@example.com,
+  password_digest: $2a$10$5hh3pw/nY5ZzCHeeL.IiA.m8fHnWmwQoAPICsVZscZcxssAn6ojVC #password
+  temporary_password: false
+
+student:
+  first_name: Test
+  last_name: Student
+  email: student@example.com
+  password_digest: $2a$10$5hh3pw/nY5ZzCHeeL.IiA.m8fHnWmwQoAPICsVZscZcxssAn6ojVC #password
+  temporary_password: false

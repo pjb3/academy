@@ -1,0 +1,20 @@
+unit_1:
+  lesson: lesson_1
+  name: Installing Applications
+  number: 1
+  video_url: https://www.youtube.com/watch?v=8gkvAt1FYps
+  video_length: 0 # To make integration testing not slow, we are setting the length of all videos to 0
+
+unit_2:
+  lesson: lesson_1
+  name: Launching Applications
+  number: 2
+  video_url: https://www.youtube.com/watch?v=8C-nLj3hE48
+  video_length: 0
+
+unit_3:
+  lesson: lesson_1
+  name: Switching Applications
+  number: 3
+  video_url: https://www.youtube.com/watch?v=_-Q5oTxXTBA
+  video_length: 0

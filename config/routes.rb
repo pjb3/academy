@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   get    '/units/:id'   => 'units#show', as: :unit
   get    '/units/:id/complete' => 'units#complete', as: :complete_unit
 
+  get    '/questions/:id' => 'questions#show', as: :question
+  post   '/questions/:id' => 'questions#update'
+
   root   'course_enrollments#index'
 end

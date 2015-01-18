@@ -3,6 +3,7 @@ class Lesson < ActiveRecord::Base
 
   has_many :units
   has_many :questions
+  has_many :lesson_enrollments
 
   validates_presence_of :course_id, :name, :number
   validates_uniqueness_of :number, scope: :course_id
@@ -21,6 +22,10 @@ class Lesson < ActiveRecord::Base
 
   def update_total_video_length
     update(total_video_length: units.sum(:video_length))
+  end
+
+  def first_question
+    questions.order('number').first
   end
 
 end

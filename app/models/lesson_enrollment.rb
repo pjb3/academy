@@ -40,6 +40,14 @@ class LessonEnrollment < ActiveRecord::Base
     answers.detect{|answer| answer.question == question }
   end
 
+  def answer(question, choice)
+    if choice.correct?
+      answers.create(question: question).tap do
+        complete_if_done!
+      end
+    end
+  end
+
   def start!
     unless started?
       update!(started_at: Time.current)
@@ -59,11 +67,18 @@ class LessonEnrollment < ActiveRecord::Base
     end
   end
 
-  def done?
+  def units_completed?
     unit_enrollments.reload
-    return false unless lesson.units.all? {|unit| has_completed?(unit) }
+    lesson.units.all? {|unit| has_completed?(unit) }
+  end
+
+  def quiz_completed?
     answers.reload
     lesson.questions.all? {|question| has_answered?(question) }
+  end
+
+  def done?
+    units_completed? && quiz_completed?
   end
 
   def complete_if_done!

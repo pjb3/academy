@@ -1,0 +1,59 @@
+question_1_choice_1:
+  question: question_1
+  content: 42
+  correct: true
+
+question_1_choice_2:
+  question: question_1
+  content: 7
+  correct: false
+
+question_1_choice_3:
+  question: question_1
+  content: 11
+  correct: false
+
+question_1_choice_4:
+  question: question_1
+  content: 33
+  correct: false
+
+question_2_choice_1:
+  question: question_2
+  content: Constant
+  correct: true
+
+question_2_choice_2:
+  question: question_2
+  content: String
+  correct: false
+
+question_2_choice_3:
+  question: question_2
+  content: Hash
+  correct: false
+
+question_2_choice_4:
+  question: question_2
+  content: Array
+  correct: false
+
+question_3_choice_1:
+  question: question_3
+  content: 84 % 2
+  correct: true
+
+question_3_choice_2:
+  question: question_3
+  content: 40 + 2
+  correct: false
+
+question_3_choice_3:
+  question: question_3
+  content: 6 * 7
+  correct: false
+
+question_3_choice_4:
+  question: question_3
+  content: 84 / 2
+  correct: false

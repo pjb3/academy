@@ -70,7 +70,7 @@ class CourseEnrollment < ActiveRecord::Base
 
   def done?
     lesson_enrollments.reload
-    lessons.all? {|lesson| has_completed?(lesson) }
+    course.lessons.all? {|lesson| has_completed?(lesson) }
   end
 
   def complete_if_done!

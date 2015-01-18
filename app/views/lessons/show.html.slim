@@ -12,3 +12,6 @@ ol.breadcrumb
       = "#{unit.number}. #{unit.name}"
       em.pull-right= Formatting.hms(unit.video_length, show_hour_if_zero: false)
     - last_unit_complete = @lesson_enrollment.has_completed?(unit)
+  = link_to @lesson_enrollment.units_completed? ? @lesson.first_question : '#', class: "list-group-item #{class_for(status: @lesson_enrollment.quiz_completed? ? :complete : :incomplete, disabled: !@lesson_enrollment.units_completed?)}"
+    | Quiz
+    em.pull-right= pluralize @lesson.questions_count, "Question"

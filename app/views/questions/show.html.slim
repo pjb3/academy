@@ -1,0 +1,24 @@
+ol.breadcrumb
+  li= link_to 'Courses', root_path
+  li= link_to @course.name, course_path(@course)
+  li= link_to @lesson.name, lesson_path(@lesson)
+  li.active= "Question #{@question.number} of #{@lesson.questions_count}"
+
+= form_tag({}, method: :post, class: 'form-horizontal')
+  .panel.panel-primary
+    .panel-body
+      = @question.content
+
+      - if @choice && !@choice.correct?
+        .alert.alert-warning
+          strong Oops!
+          | &nbsp;That's not correct, please try again. Try reviewing #{link_to(@question.unit.name, @question.unit)} if you are still unsure.
+
+      - for choice in @choices
+        .radio
+          label
+            = radio_button_tag :choice_id, choice.id, @choice.try(:id) == choice.id
+            = choice.content
+
+    .panel-body.pull-right
+      = button_to @choice.try(:correct?) ? 'Next Question' : 'Submit Answer', {}, class: "btn btn-lg btn-success", method: 'post'

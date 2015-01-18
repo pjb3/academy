@@ -1,0 +1,9 @@
+instructor_enrollment:
+  user: instructor
+  course: bewd
+  role: instructor
+
+student_enrollment:
+  user: student
+  course: bewd
+  role: instructor

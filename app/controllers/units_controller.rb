@@ -4,10 +4,12 @@ class UnitsController < ApplicationController
 
   def complete
     if @unit_enrollment.completed?
-      redirect_to next_url
+      logger.info "Unit is already completed"
+      redirect_to next_step
     elsif @unit_enrollment.can_be_completed?
+      logger.info "Marking unit as complete"
       @unit_enrollment.complete!
-      redirect_to next_url
+      redirect_to next_step
     else
       head :forbidden
     end
@@ -29,11 +31,15 @@ private
     end
   end
 
-  def next_url
-    if @unit.next
-      unit_url(@unit.next)
-    else
-      lesson_url(@lesson)
+  def next_step
+    @unit.next || @lesson.first_question || @lesson
+  end
+
+  helper_method def next_label
+    case next_step
+    when Unit then 'Next Unit'
+    when Question then 'Take Quiz'
+    when Lesson then 'Complete Lesson'
     end
   end
 
