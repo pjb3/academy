@@ -15,7 +15,7 @@ module ApplicationHelper
     when YOUTUBE
       p = CGI.parse(uri.query)
       if v = p['v'].try(:first)
-        render 'shared/embed/youtube', src: "//www.youtube.com/embed/#{v}"
+        render 'shared/embed/youtube', src: "//www.youtube.com/embed/#{v}?vq=hd720&showinfo=0&rel=0"
       end
     end
   end
