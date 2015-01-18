@@ -1,4 +1,6 @@
 class Unit < ActiveRecord::Base
+  include Numbered
+
   belongs_to :lesson, counter_cache: true
 
   validates_presence_of :lesson_id, :name, :number
@@ -20,6 +22,10 @@ class Unit < ActiveRecord::Base
 
   def update_lesson_total_video_length
     lesson.update_total_video_length
+  end
+
+  def number_scope
+    lesson.units
   end
 
 end

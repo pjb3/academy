@@ -1,4 +1,6 @@
 class Question < ActiveRecord::Base
+  include Numbered
+
   belongs_to :lesson, counter_cache: true
   belongs_to :unit
 
@@ -21,5 +23,9 @@ class Question < ActiveRecord::Base
 
   def correct_choice
     choices.correct.first
+  end
+
+  def number_scope
+    lesson.questions
   end
 end

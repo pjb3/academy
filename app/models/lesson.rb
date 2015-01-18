@@ -1,4 +1,6 @@
 class Lesson < ActiveRecord::Base
+  include Numbered
+
   belongs_to :course, counter_cache: true
 
   has_many :units
@@ -26,6 +28,10 @@ class Lesson < ActiveRecord::Base
 
   def first_question
     questions.order('number').first
+  end
+
+  def number_scope
+    course.lessons
   end
 
 end
