@@ -188,20 +188,20 @@ course.lessons.create!(name: 'The Command Line').tap do |lesson|
 
 end
 
-course.lessons.create!(name: 'The Atom Text Editor').tap do |lesson|
-end
-
-course.lessons.create!(name: 'Git Basics').tap do |lesson|
-end
-
-course.lessons.create!(name: 'Ruby Basics').tap do |lesson|
-end
-
-course.lessons.create!(name: 'Test-Driven Development with Ruby').tap do |lesson|
-end
-
-course.lessons.create!(name: 'Functional Programming with Ruby').tap do |lesson|
-end
-
-course.lessons.create!(name: 'Object Oriented Programming with Ruby').tap do |lesson|
-end
+# course.lessons.create!(name: 'The Atom Text Editor').tap do |lesson|
+# end
+#
+# course.lessons.create!(name: 'Git Basics').tap do |lesson|
+# end
+#
+# course.lessons.create!(name: 'Ruby Basics').tap do |lesson|
+# end
+#
+# course.lessons.create!(name: 'Test-Driven Development with Ruby').tap do |lesson|
+# end
+#
+# course.lessons.create!(name: 'Functional Programming with Ruby').tap do |lesson|
+# end
+#
+# course.lessons.create!(name: 'Object Oriented Programming with Ruby').tap do |lesson|
+# end
