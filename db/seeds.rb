@@ -177,9 +177,9 @@
 #
 #   lesson.units.create!(name: 'The root user and the sudo command', video_url: 'https://www.youtube.com/watch?v=n3fFmtUaZYo', video_length: 355).tap do |unit|
 #     lesson.questions.create!(content: 'Which command is used to run a command as the root user?', unit: unit).tap do |question|
-#       question.choices.create!(content: 'chmod', correct: true)
+#       question.choices.create!(content: 'sudo', correct: true)
 #       question.choices.create!(content: 'root')
-#       question.choices.create!(content: 'sudo')
+#       question.choices.create!(content: 'chmod')
 #       question.choices.create!(content: 'ex')
 #     end
 #   end
