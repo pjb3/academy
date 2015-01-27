@@ -1,0 +1,387 @@
+- name: Mac OS X
+  description: This lesson will cover the basics of using the latest version of Mac
+    OS X, 10.10 Yosemite
+  units:
+  - name: Launching Applications
+    video_url: https://www.youtube.com/watch?v=irkU8GsQHRU
+    video_length: 188
+  - name: System Preferences
+    video_url: https://www.youtube.com/watch?v=oYFhLBUHdpg
+    video_length: 312
+  - name: Switching Between Applications
+    video_url: https://www.youtube.com/watch?v=Wt3dcQTihCU
+    video_length: 179
+  - name: Installing Applications
+    video_url: https://www.youtube.com/watch?v=CzJdQU1xBWE
+    video_length: 410
+  - name: Running Installers
+    video_url: https://www.youtube.com/watch?v=e6KSY8PO7rg
+    video_length: 165
+  questions:
+  - content: What is the fastest way to launch an application?
+    choices:
+    - content: Spotlight
+      correct: true
+    - content: Dock
+    - content: Finder
+    - content: Start Menu
+  - content: What is keyboard shortcut for Spotlight?
+    choices:
+    - content: Command + Space
+      correct: true
+    - content: Control + Space
+    - content: Option + Space
+    - content: Command + Tab
+  - content: Where can you customize your Mac setting?
+    choices:
+    - content: System Preferences
+      correct: true
+    - content: Control Panel
+    - content: Spotlight
+    - content: Finder
+  - content: What is the keyboard shortcut to switch between running applications?
+    choices:
+    - content: Command + Tab
+      correct: true
+    - content: Command + Space
+    - content: Control + Space
+    - content: Option + Space
+  - content: Which of the following is not a way to install an application?
+    choices:
+    - content: Double-clicking on an application in a disk image
+      correct: true
+    - content: Dragging an application from the Downloads folder into the Applications
+        folder
+    - content: Running an installer from a disk image
+    - content: Dragging an application from a disk image to the Applications folder
+- name: The Command Line
+  description:
+  units:
+  - name: Setup iTerm
+    video_url: https://www.youtube.com/watch?v=uIZlSKi8wn4
+    video_length: 313
+  - name: Running Commands in Bash
+    video_url: https://www.youtube.com/watch?v=WkVrge3tv7Q
+    video_length: 173
+  - name: Using Variables in Commands
+    video_url: https://www.youtube.com/watch?v=0TjnAP1XN-g
+    video_length: 138
+  - name: Sorting and Searching Using Pipes
+    video_url: https://www.youtube.com/watch?v=I-tOxga_-jI
+    video_length: 157
+  - name: Directories and Paths
+    video_url: https://www.youtube.com/watch?v=2h1o-nd6coc
+    video_length: 344
+  - name: Working With Files
+    video_url: https://www.youtube.com/watch?v=MmBPzHencZU
+    video_length: 230
+  - name: History and Other Shortcuts
+    video_url: https://www.youtube.com/watch?v=ST73BdrbBC8
+    video_length: 182
+  - name: The PATH Enviornment Variable
+    video_url: https://www.youtube.com/watch?v=ZUrKdo8Bh8s
+    video_length: 368
+  - name: Exporting Variables
+    video_url: https://www.youtube.com/watch?v=M_nMei9eKtc
+    video_length: 183
+  - name: Configuring Bash
+    video_url: https://www.youtube.com/watch?v=zsiwtYJcQiQ
+    video_length: 484
+  - name: Processes
+    video_url: https://www.youtube.com/watch?v=r42wvy80j1s
+    video_length: 291
+  - name: Security and Permissions
+    video_url: https://www.youtube.com/watch?v=2muv2IyXSM0
+    video_length: 354
+  - name: The root user and the sudo command
+    video_url: https://www.youtube.com/watch?v=n3fFmtUaZYo
+    video_length: 355
+  questions:
+  - content: What is the default shell in Mac OS X?
+    choices:
+    - content: bash
+      correct: true
+    - content: zsh
+    - content: iterm
+    - content: Terminal
+  - content: In bash, what character to prepend to a variable to get the value?
+    choices:
+    - content: "$"
+      correct: true
+    - content: "|"
+    - content: "\""
+    - content: "@"
+  - content: In bash, what character do you use to send the output of one command
+      to the input of another?
+    choices:
+    - content: "|"
+      correct: true
+    - content: ">"
+    - content: "$"
+    - content: "@"
+  - content: Which bash command is used to search through content?
+    choices:
+    - content: grep
+      correct: true
+    - content: search
+    - content: sort
+    - content: env
+  - content: Which of the following is a relative path?
+    choices:
+    - content: Applications
+      correct: true
+    - content: "/Applications"
+    - content: "/Users/paul"
+    - content: "/"
+  - content: Which key will make bash complete the name of a file?
+    choices:
+    - content: tab
+      correct: true
+    - content: space
+    - content: return
+    - content: control
+  - content: Which keyboard shortcut will bring the cursor to the beginning of the
+      line in bash?
+    choices:
+    - content: control + a
+      correct: true
+    - content: control + e
+    - content: command + a
+    - content: command + e
+  - content: Which of these directories in not in the PATH variable by default?
+    choices:
+    - content: "$HOME/bin"
+      correct: true
+    - content: "/usr/local/bin"
+    - content: "/usr/bin"
+    - content: "/bin"
+  - content: Which command can be used to find the location of a command?
+    choices:
+    - content: which
+      correct: true
+    - content: cat
+    - content: ls
+    - content: grep
+  - content: In bash, what do you need to use to make a variable visible by child
+      processes?
+    choices:
+    - content: export
+      correct: true
+    - content: which
+    - content: echo
+    - content: cat
+  - content: Which file is read and executed by bash when it starts?
+    choices:
+    - content: ".bash_profile"
+      correct: true
+    - content: bash_profile
+    - content: ".bash_config"
+    - content: bash_config
+  - content: Which command is used in bash to see a list of running processes?
+    choices:
+    - content: ps
+      correct: true
+    - content: ls
+    - content: grep
+    - content: processes
+  - content: Which command is used in bash to stop a running process?
+    choices:
+    - content: kill
+      correct: true
+    - content: stop
+    - content: ps
+    - content: term
+  - content: Which command is used to change the permissions of a file?
+    choices:
+    - content: chmod
+      correct: true
+    - content: chown
+    - content: ls -la
+    - content: modperm
+  - content: Which command is used to run a command as the root user?
+    choices:
+    - content: sudo
+    - content: ex
+    - content: root
+      correct: true
+    - content: chmod
+- name: The Atom Text Editor
+  description: This lesson will cover the basics of using the Atom text editor
+  units:
+  - name: Launching Atom and Running Commands
+    video_url: https://www.youtube.com/watch?v=K_55U3Wwx4U
+    video_length: 269
+  - name: Finding Files
+    video_url: https://www.youtube.com/watch?v=jX4Yl0sGQlk
+    video_length: 118
+  - name: Installing Packages
+    video_url: https://www.youtube.com/watch?v=vU5PmtPKe_Q
+    video_length: 52
+  - name: Moving Text
+    video_url: https://www.youtube.com/watch?v=OHRF0vkga04
+    video_length: 52
+  - name: Finding Text
+    video_url: https://www.youtube.com/watch?v=H6l3ZxuZI4E
+    video_length: 67
+  - name: Multiple Selection
+    video_url: https://www.youtube.com/watch?v=3DFzOlDeq5A
+    video_length: 120
+  questions:
+  - content: What is keyboard shortcut for the command menu in Atom?
+    choices:
+    - content: Shift + Command + P
+      correct: true
+    - content: Command + P
+    - content: Command + F
+    - content: Shift + Command + F
+  - content: What is keyboard shortcut to find a file in Atom?
+    choices:
+    - content: Command + P
+      correct: true
+    - content: Shift + Command + P
+    - content: Command + F
+    - content: Shift + Command + F
+  - content: What can you install in Atom to get more commands?
+    choices:
+    - content: Packages
+      correct: true
+    - content: Plug-ins
+    - content: Add-ons
+    - content: Themes
+  - content: What keyboard shortcut can you use to move a line up in Atom?
+    choices:
+    - content: Control + Command + Up Arrow
+      correct: true
+    - content: Shift + Command + Up Arrow
+    - content: Option + Command + Up Arrow
+    - content: Control + Option + Command + Up Arrow
+  - content: What keyboard shortcut can you use to search for text in a project in
+      Atom?
+    choices:
+    - content: Shift + Command + F
+      correct: true
+    - content: Command + F
+    - content: Command + D
+    - content: Shift + Command + G
+  - content: What keyboard shortcut can you use to select multiple occurances of text
+      in a file in Atom?
+    choices:
+    - content: Command + D
+      correct: true
+    - content: Command + F
+    - content: Command + G
+    - content: Shift + Command + F
+- name: Github
+  description:
+  units:
+  - name: Setup Github for Mac
+    video_url: https://www.youtube.com/watch?v=Gnb5OYwTLhU
+    video_length: 276
+  - name: 'Publishing a Repository to Github '
+    video_url: https://www.youtube.com/watch?v=4FLYiFhWNjo
+    video_length: 124
+- name: Your First Rails App
+  description:
+  units:
+  - name: Install Homebrew
+    video_url: https://www.youtube.com/watch?v=pCF9TU4dL70
+    video_length: 131
+  - name: Install rbenv
+    video_url: https://www.youtube.com/watch?v=Bm0ntW4GpB4
+    video_length: 136
+  - name: Use rbenv to install Ruby
+    video_url: https://www.youtube.com/watch?v=RyJD1AbSRvQ
+    video_length: 155
+  - name: Use Ruby 2.2.0
+    video_url: https://www.youtube.com/watch?v=EPvxvjTo8aU
+    video_length: 47
+  - name: Install Postgres
+    video_url: https://www.youtube.com/watch?v=Y9MYNG4R6-g
+    video_length: 128
+  - name: Install Rails
+    video_url: https://www.youtube.com/watch?v=AYruGbOgjJU
+    video_length: 47
+  - name: Create a Rails app
+    video_url: https://www.youtube.com/watch?v=ZihK58khqVg
+    video_length: 65
+  - name: Start your Rails app
+    video_url: https://www.youtube.com/watch?v=FLhkoY6jgOk
+    video_length: 108
+  - name: Customize your Rails app
+    video_url: https://www.youtube.com/watch?v=awlTpquySRs
+    video_length: 154
+  - name: Deploy your app to Heroku
+    video_url: https://www.youtube.com/watch?v=n6ncKn83pko
+    video_length: 333
+- name: Web Fundamentals
+  description: How does the Internet work?
+  units:
+  - name: DNS and Static Web Pages
+    video_url: https://www.youtube.com/watch?v=8k9_dvhbGNM
+    video_length: 423
+- name: HTML
+  units:
+  - name: HTML Basics
+    video_url: https://www.youtube.com/watch?v=9QYfZFUIwlw
+    video_length: 437
+  - name: Adding Images to HTML pages
+    video_url: https://www.youtube.com/watch?v=y9I6uQtDDVI
+    video_length: 167
+  - name: HTML Lists
+    video_url: https://www.youtube.com/watch?v=Fmz-Jpe9uYY
+    video_length: 49
+  - name: HTML Links
+    video_url: https://www.youtube.com/watch?v=m4N3YqCUcO4
+    video_length: 97
+  - name: HTML Tables
+    video_url: https://www.youtube.com/watch?v=HqSeDy5QRqQ
+    video_length: 192
+  - name: HTML Forms Part 1
+    video_url: https://www.youtube.com/watch?v=9opL8UPsgic
+    video_length: 763
+  - name: HTML Forms Part 2
+    video_url: https://www.youtube.com/watch?v=HNlGXBMAric
+    video_length: 386
+- name: CSS
+  units:
+  - name: Inline Styles
+    video_url: https://www.youtube.com/watch?v=md0uJzXliHM
+    video_length: 246
+  - name: Cascading Styles
+    video_url: https://www.youtube.com/watch?v=E7Fth_fQ5KY
+    video_length: 99
+  - name: Multiple Tag Selectors
+    video_url: https://www.youtube.com/watch?v=xSTcNINg6CQ
+    video_length: 34
+  - name: ID Selectors
+    video_url: https://www.youtube.com/watch?v=b1E8gm4DIU0
+    video_length: 101
+  - name: Class Selectors
+    video_url: https://www.youtube.com/watch?v=x35GCDAuf0Q
+    video_length: 74
+  - name: Combining Selectors
+    video_url: https://www.youtube.com/watch?v=9Wy9TuhhmNY
+    video_length: 85
+  - name: Nested Selectors
+    video_url: https://www.youtube.com/watch?v=r0g9GHfOidQ
+    video_length: 177
+  - name: External Style Sheets
+    video_url: https://www.youtube.com/watch?v=2bE-X1RQF60
+    video_length: 206
+- name: Making Static Web Pages with Rails
+  units:
+  - name: Routes, Views and Layouts
+    video_url: https://www.youtube.com/watch?v=gVCSnzjnAWY
+    video_length: 631
+  - name: Rails Stylesheets
+    video_url: https://www.youtube.com/watch?v=ghWa8fINmog
+    video_length: 105
+  - name: Adding Bootstrap
+    video_url: https://www.youtube.com/watch?v=LOb4b57PVFI
+    video_length: 370
+  - name: Using Bootstrap
+    video_url: https://www.youtube.com/watch?v=JFy9FSrKKgI
+    video_length: 566
+  - name: Using Slim to write HTML
+    video_url: https://www.youtube.com/watch?v=vGZ1Hvg3jrw
+    video_length: 740

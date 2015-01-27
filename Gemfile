@@ -10,12 +10,15 @@ gem 'jquery-rails'
 gem 'newrelic_rpm'
 gem 'pg'
 gem 'puma'
-gem 'rails_12factor'
 gem 'rails', '4.2.0'
 gem 'rails-assets-bootstrap'
 gem 'sass-rails', '~> 5.0'
 gem 'slim'
 gem 'uglifier', '>= 1.3.0'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'byebug'
