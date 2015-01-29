@@ -57,15 +57,16 @@ namespace :syllabus do
         u.save!
       end
 
-      Array(lesson['questions']).each do |question|
-        q = l.questions.find_by(content: question['content']) || l.questions.build(question.slice(*%w[content]))
-        q.save!
-
-        Array(question['choices']).each do |choice|
-          c = q.choices.find_by(content: choice['content']) || q.choices.build(choice.clice(*%[content correct]))
-          c.save!
-        end
-      end
+      # TODO: Fix loading of questions, need a way to associate them to a unit
+      # Array(lesson['questions']).each do |question|
+      #   q = l.questions.find_by(content: question['content']) || l.questions.build(question.slice(*%w[content]))
+      #   q.save!
+      #
+      #   Array(question['choices']).each do |choice|
+      #     c = q.choices.find_by(content: choice['content']) || q.choices.build(choice.clice(*%[content correct]))
+      #     c.save!
+      #   end
+      # end
     end
   end
 end

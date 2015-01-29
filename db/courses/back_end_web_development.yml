@@ -385,3 +385,70 @@
   - name: Using Slim to write HTML
     video_url: https://www.youtube.com/watch?v=vGZ1Hvg3jrw
     video_length: 740
+- name: Ruby Basics
+  units:
+  - name: IRB
+    video_url: https://www.youtube.com/watch?v=Ngq4EJG3iXo
+    video_length: 108
+  - name: Literals
+    video_url: https://www.youtube.com/watch?v=71gbb4pNm4c
+    video_length: 154
+  - name: Operators
+    video_url: https://www.youtube.com/watch?v=hWvtDEUqmtE
+    video_length: 135
+  - name: nil
+    video_url: https://www.youtube.com/watch?v=Qn-8xwg8oRg
+    video_length: 72
+  - name: Variables
+    video_url: https://www.youtube.com/watch?v=FtcI0-J4DgY
+    video_length: 101
+  - name: Interpolation
+    video_url: https://www.youtube.com/watch?v=8CbupY-AE_k
+    video_length: 128
+  - name: Arrays
+    video_url: https://www.youtube.com/watch?v=u6V3o2zHjNY
+    video_length: 131
+  - name: Hashes
+    video_url: https://www.youtube.com/watch?v=_JcL3opeqNo
+    video_length: 166
+- name: Ruby Methods
+  units:
+  - name: Tabs
+    video_url: https://www.youtube.com/watch?v=-9s0AwnLf0I
+    video_length: 161
+  - name: Moving Around in Atom
+    video_url: https://www.youtube.com/watch?v=taCRR_8nQs0
+    video_length: 525
+  - name: puts
+    video_url: https://www.youtube.com/watch?v=rq15LnWyDjU
+    video_length: 75
+  - name: Running Programs From the Command Line
+    video_url: https://www.youtube.com/watch?v=5-J90pxNeMQ
+    video_length: 110
+  - name: Running Programs From Atom
+    video_url: https://www.youtube.com/watch?v=QyVnWjZzGVY
+    video_length: 168
+  - name: String Methods
+    video_url: https://www.youtube.com/watch?v=QSFyibit22E
+    video_length: 126
+  - name: Array Methods
+    video_url: https://www.youtube.com/watch?v=coF44Bj2je8
+    video_length: 461
+  - name: Hash Methods
+    video_url: https://www.youtube.com/watch?v=4RKi1JDEGSo
+    video_length: 154
+  - name: Your Own Methods
+    video_url: https://www.youtube.com/watch?v=9F0HSFa5NFg
+    video_length: 383
+  - name: Conditionals
+    video_url: https://www.youtube.com/watch?v=sW6Oco-JsJA
+    video_length: 393
+  - name: Comments
+    video_url: https://www.youtube.com/watch?v=-dXYsj3eNDs
+    video_length: 117
+  - name: Iteration
+    video_url: https://www.youtube.com/watch?v=PSiNIYC01_c
+    video_length: 391
+  - name: Exceptions
+    video_url: https://www.youtube.com/watch?v=nJxEv32uRfA
+    video_length: 582
