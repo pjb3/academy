@@ -452,3 +452,29 @@
   - name: Exceptions
     video_url: https://www.youtube.com/watch?v=nJxEv32uRfA
     video_length: 582
+- name: Basic Object-Oriented Programming with Ruby
+  units:
+    - name: Everything is an object
+      video_url: https://www.youtube.com/watch?v=SZmvhqCt184
+      video_length: 128
+    - name: Instantiating a class
+      video_url: https://www.youtube.com/watch?v=2moJPSP5MCU
+      video_length: 158
+    - name: Object Initialization
+      video_url: https://www.youtube.com/watch?v=-0marwBhJgc
+      video_length: 151
+    - name: Initializer Arguments
+      video_url: https://www.youtube.com/watch?v=MxiI3Fo56jc
+      video_length: 110
+    - name: Keeping state in instance variables
+      video_url: https://www.youtube.com/watch?v=kF2BxRw44Ek
+      video_length: 173
+    - name: Reader methods
+      video_url: https://www.youtube.com/watch?v=aafIXphQhIU
+      video_length: 115
+    - name: Writer methods
+      video_url: https://www.youtube.com/watch?v=LfEt_7MJ72I
+      video_length: 164
+    - name: Inheritance
+      video_url: https://www.youtube.com/watch?v=76ypSAen8BY
+      video_length: 173
