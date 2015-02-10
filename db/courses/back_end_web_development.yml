@@ -478,3 +478,32 @@
     - name: Inheritance
       video_url: https://www.youtube.com/watch?v=76ypSAen8BY
       video_length: 173
+- name: SQL
+  units:
+    - name: SQL Tables
+      video_url: https://www.youtube.com/watch?v=AmdJKw66yRc
+      video_length: 86
+    - name: Creating SQL tables with migrations
+      video_url: https://www.youtube.com/watch?v=K47vN3KGarU
+      video_length: 272
+    - name: Inserting rows
+      video_url: https://www.youtube.com/watch?v=rtRPoTSXh_Y
+      video_length: 123
+    - name: Selecting rows
+      video_url: https://www.youtube.com/watch?v=0xt7MTdQKn4
+      video_length: 172
+    - name: Filtering rows with where
+      video_url: https://www.youtube.com/watch?v=tFCEjCb96Io
+      video_length: 132
+    - name: Using and and or
+      video_url: https://www.youtube.com/watch?v=WJCxrpNvqeI
+      video_length: 81
+    - name: Using in
+      video_url: https://www.youtube.com/watch?v=Ww-bu_mYaqY
+      video_length: 80
+    - name: "null"
+      video_url: https://www.youtube.com/watch?v=zaNXUPByLNk
+      video_length: 117
+    - name: Using order by and limit
+      video-url: https://www.youtube.com/watch?v=bmjo9GxPI6I
+      video_length: 127
